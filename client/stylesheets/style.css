@@ -1,0 +1,13 @@
+#titre1
+{
+	color:rgb(0,128,192);
+	font-size: 42px;
+	font-family: Trebuchet MS, Verdana, Impact;
+	text-align: center;
+	text-shadow: 2px 2px 4px black;
+}
+#table
+{
+	text-align: left;
+	margin: auto;
+}

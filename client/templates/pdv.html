@@ -1,0 +1,31 @@
+<template name="pdv">
+	<h1 id="titre1">Suivi des points de ventes</h1>
+	<br> <br> <br>
+	<table border="1" id="table" width=60% class="panel panel-default">
+		<thead class="panel-heading">
+			<tr>
+				<!--Création du l'entête du tableau-->
+				<th>Identifiant</th>
+				<th>Libellé</th>
+				<th>Region</th>
+				<th>Montant</th>
+				<th>Nombre de transactions</th>
+				<th>Etat</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--on va boucler sur la variable allListObjects qui contiendra tout les documents de la collection-->
+			<!-- on utilise spacebars : langage de template pour Meteor similaire a Handlebars-->
+			{{#each allListObjects}}
+				<tr id="tr{{id_oracle}}">
+					<td classe='id_oracle'>{{id_oracle}}</td>
+					<td classe='libelle'>{{libelle}}</td>
+					<td classe='region'>{{region}}</td>
+					<td classe='montant'>{{montant}}</td>
+					<td classe='nbt'>{{nbt}}</td>
+					<td classe='etat' id="etat" style="background-color : {{etat}}">&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>
