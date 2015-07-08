@@ -11,3 +11,4 @@ http
 iron:router
 twbs:bootstrap
 momentjs:moment
+doctorpangloss:mongodb-server-aggregation

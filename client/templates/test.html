@@ -1,0 +1,80 @@
+<template name="test">
+	<center><img src="logo.png" alt="logo" id="logo"/></center>
+	<h1 id="titre1">Test</h1>
+	<br> <br> <br>
+	<table border="1" id="table1" width=60% class="panel panel-default">
+		<thead class="panel-heading">
+			<tr>
+				<!--Création du l'entête du tableau-->
+				<th>Region</th>
+				<th>Identifiant</th>
+				<th>Libellé</th>
+				<th>Montant</th>
+				<th>Nombre de transactions</th>
+				<th>Etat</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--on va boucler sur la variable allListObjects qui contiendra tout les documents de la collection-->
+			<!-- on utilise spacebars : langage de template pour Meteor similaire a Handlebars-->
+			{{#each regionObject}}
+				<tr id="tr{{id_oracle}}">
+					<td classe='region' style="bold">{{this}}</td>
+					<td classe='id_oracle' style="background-color : grey"></td>
+					<td classe='libelle' style="background-color : grey"></td>
+					<td classe='montant'></td>
+					<td classe='nbt'></td>
+					<td classe='etat' id="etat" style="background-color : grey">&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+				{{#each listPdv}}
+					{{#if listPdv.region=regionObject}}
+						<tr id="tr{{id_oracle}}">
+							<td classe='region' style="background-color : grey"></td>
+							<td classe='id_oracle'>{{id_oracle}}</td>
+							<td classe='libelle'>{{libelle}}</td>
+							<td classe='montant'>{{montant}}</td>
+							<td classe='nbt'>{{nbt}}</td>
+							<td classe='etat' id="etat" style="background-color : {{etat}}">&nbsp;&nbsp;&nbsp;</td>
+						</tr>
+					{{/if}}
+				{{/each}}
+			{{/each}}
+		</tbody>
+	</table>
+	<center>
+
+	</center>	
+</template>
+
+
+<template name="affiche">
+	<table border="1" id="table1"  class="panel panel-default">
+		<thead class="panel-heading">
+			<tr>
+				<!--Création du l'entête du tableau-->
+				<th>Region</th>
+				<th>Identifiant</th>
+				<th>Libellé</th>
+				<th>Montant</th>
+				<th>Nombre de transactions</th>
+				<th>Etat</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--on va boucler sur la variable allListObjects qui contiendra tout les documents de la collection-->
+			<!-- on utilise spacebars : langage de template pour Meteor similaire a Handlebars-->
+			{{#each allList}}
+				<tr id="tr{{id_oracle}}">
+					<td classe='region' style="background-color : grey"></td>
+					<td classe='id_oracle'>{{id_oracle}}</td>
+					<td classe='libelle'>{{libelle}}</td>
+					<td classe='montant'>{{montant}}</td>
+					<td classe='nbt'>{{nbt}}</td>
+					<td classe='etat' id="etat" style="background-color : {{etat}}">&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+ </template>
+
+
